@@ -10,7 +10,7 @@ export const typeDefs = gql`
     name: String!
     twitter: String
   }
-
+  
   type Book {
     title: String!
     author: String!
