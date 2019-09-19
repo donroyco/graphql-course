@@ -6,6 +6,11 @@ export const typeDefs = gql`
     twitter: String
   }
 
+  input ChangeBookInput {
+    id: Int!
+    title: String!
+  }
+
   type Author {
     name: String!
     twitter: String
@@ -14,6 +19,7 @@ export const typeDefs = gql`
   type Book {
     title: String!
     author: String!
+    id: Int!
   }
 
   type Query {
@@ -23,5 +29,7 @@ export const typeDefs = gql`
 
   type Mutation {
     addAuthor(input: AddAuthorInput!): Author
+    changeBookTitle(input: ChangeBookInput!): Book
+    deleteBook(id: Int!): Boolean
   }
 `;
